@@ -37,20 +37,23 @@ i = 0
   street_address = "54 Main St."
   postal_code = "M1M 1M1"
   photo_url = "http://placehold.it/500/500"
-
-  new_restaurant = [r_name[i], menu, seats, street_address, postal_code, photo_url]
+  price_range = rand(1..4)
+  cuisine = ["Canadian", "Pizza", "Italian", "Seafood", "Chicken", "Rotisserie", "Mexican", "British"]
+  new_restaurant = [r_name[i], menu, seats, street_address, postal_code, photo_url, price_range, cuisine[i]]
   restaurants.push(new_restaurant)
   i += 1
 end
 
-restaurants.each do |name, menu, seats, street_address, postal_code, photo_url|
+restaurants.each do |name, menu, seats, street_address, postal_code, photo_url, price_range, cuisine|
   Restaurant.create(
     :restaurant_name => name,
     :menu => menu,
     :seats => seats,
     :street_address => street_address,
     :postal_code => postal_code,
-    :photo_url => photo_url )
+    :photo_url => photo_url,
+    :price_range => price_range,
+    :cuisine => cuisine )
 end
 
 
