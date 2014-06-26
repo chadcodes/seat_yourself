@@ -28,3 +28,5 @@ More Rails nested query magic...
 This will find a Users name based on a reservation_id:
 User.find(Reservation.find(2).user_id).name
 
+git test - sandy - 06262014
+
