@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :welcome, :only => [:index]
   resources :reservations, :only => [:index, :show]
-  resources :users, :only => [:show, :new, :edit]
+  resources :users, :only => [:show, :new, :edit, :create, :destroy]
   resources :restaurants, :only => [:index, :show ]
   
   # The priority is based upon order of creation: first created -> highest priority.
