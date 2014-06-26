@@ -1,0 +1,19 @@
+<h1><%= @restaurant.restaurant_name %></h1>
+<hr>
+
+<%= link_to "Back", restaurants_path %>
+<p><a href="/restaurants/#{@restaurant.id}"><img class="th" src="<%= @restaurant[:photo_url] %>" width="250" height="250"></a></p>
+<ul>
+	<li>Capacity = <%= @restaurant.seats %></li>
+	<li>Address = <%= @restaurant.street_address %></li>
+</ul>
+
+<h4>Menu</h4>
+<p> ----------------------------------- </p>
+<ul>
+	<li><%= @restaurant.menu %></li>
+</ul>
+
+
+
+

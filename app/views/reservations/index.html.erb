@@ -3,7 +3,7 @@
 
 <% @reservations.each do |reservation| %>
 
-<h3><strong>Restaurant</strong> = <%= reservation.restaurant.restaurant_name %> - <%= reservation.restaurant.cuisine %></h3>
+<h3><strong><%= link_to reservation.restaurant.restaurant_name, restaurant_path(reservation) %></strong>- <%= reservation.restaurant.cuisine %></h3>
 <ul>
 	<li><%= link_to "Reservation #{reservation.id}", reservation_path(reservation) %></li>
 	<li>When = <%= reservation.date %> - <%= reservation.time_slot %></li>
