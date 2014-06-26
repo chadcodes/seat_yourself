@@ -3,12 +3,19 @@ Rails.application.routes.draw do
  
 
 
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   root to: "welcome#index"
 
   resources :welcome, :only => [:index]
   resources :reservations, :only => [:index, :show]
   resources :users, :only => [:show, :new, :edit, :create, :destroy]
   resources :restaurants, :only => [:index, :show ]
+  resources :sessions, :only => [:new, :create, :destroy]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
