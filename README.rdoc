@@ -9,3 +9,22 @@ Todo
 -
 -
 
+
+
+Query stuff
+--
+
+# Get the number of guests for a time slot
+1) Reservation.where(date: (Date.today), restaurant_id: 3, time_slot: 1).sum("guests")
+
+2) User.joins(:reservations).where("user_id = 1")
+
+
+--
+(Rails provides some sweet fucking magic in the Date class... like Date.today)
+
+More Rails nested query magic...
+--
+This will find a Users name based on a reservation_id:
+User.find(Reservation.find(2).user_id).name
+
