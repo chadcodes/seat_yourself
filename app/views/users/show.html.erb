@@ -1,0 +1,12 @@
+<h1>User # <%= @user[:name] %></h1>
+
+
+<ul>
+	<li><%= link_to @user[:name], user_path(@user) %></li>
+	<li><%= @user[:email]%></li>
+	<li><%= @user[:notes]%></li>
+</ul>
+
+
+
+<%= link_to "Back", reservation_path(@user) %>
