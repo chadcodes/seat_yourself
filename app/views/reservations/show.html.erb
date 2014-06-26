@@ -1,0 +1,9 @@
+<h1>Reservations <%= @reservation[:id] %></h1>
+
+<ul>
+	
+	<li>When = <%= @reservation[:date] %> - <%= @reservation[:time_slot] %></li>
+	<li>Party of = <%= @reservation[:guests] %></li>
+	<li><%= @reservation.user[:name] %></li>
+	<li><%= @reservation.user[:email] %></li>
+</ul>

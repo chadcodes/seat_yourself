@@ -1,0 +1,17 @@
+<h1>All Reservations</h1>
+<hr>
+
+<% @reservations.each do |reservation| %>
+
+<h3><strong>Restaurant</strong> = <%= reservation.restaurant.restaurant_name %> - <%= reservation.restaurant.cuisine %></h3>
+<ul>
+	<li><%= link_to "Reservation #{reservation.id}", reservation_path(reservation) %></li>
+	<li>When = <%= reservation.date %> - <%= reservation.time_slot %></li>
+	<li>Party of = <%= reservation.guests %></li>
+	<li><%= reservation.user.name %></li>
+	<li><%= reservation.user.email %></li>
+</ul>
+
+<p>--------------------------------------------------</p>
+<% end %>
+
