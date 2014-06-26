@@ -1,10 +1,19 @@
 <nav>
 
+
+<% if current_user %>
 <ul>
+	<li>Signed in as <%= link_to current_user.name, user_path(current_user) %></li>
+	<li><%= link_to "Profile Settings", user_path(current_user) %></li>
+	<li><%= link_to "Sign Out!", session_path("current"), method: :delete%></li>
+
+<% else %>
+
 	<li><%= link_to "Sign Up!", new_user_path %></li>
 	<li><%= link_to "Log In", new_session_path %></li>
 
 </ul>
+<% end %>
 
 
 
