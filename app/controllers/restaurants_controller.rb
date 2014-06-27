@@ -5,6 +5,13 @@ class RestaurantsController < ApplicationController
   	@restaurants = Restaurant.all
   	# will use a filter based on popularity or occupancy afterwards
   	@most_recent_five = Restaurant.most_recent_five
+
+    if params[:search]
+      @restaurants = Restaurant.search(params[:search])
+    else
+      @restaurants = Restaurant.all
+    end
+
   end
 
   def show
