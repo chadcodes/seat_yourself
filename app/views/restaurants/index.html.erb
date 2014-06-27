@@ -1,14 +1,18 @@
 <h1>Restaurants</h1>
 
 
+<h4>Featured Restaurants</h4>
 
+
+<ul>
 <% @most_recent_five.each do |t| %>
-<p><%= t.restaurant_name %></p>
-<img src="<%= t.photo_url %>" alt="">
 
+<li style="display:inline"><a href="restaurants/<%= t.id %>"><img src="<%= t.photo_url %>" title="<%= t.restaurant_name %>" alt="" width="200" height="150"></a></li>
 <% end %>
+</ul>
 
 
+<hr>
 
 <% @restaurants.each do |restaurant| %>
 
