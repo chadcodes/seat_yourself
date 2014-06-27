@@ -1,17 +1,11 @@
-<h1>All Reservations</h1>
-<hr>
+<h1>Make a Reservations at <%= @restaurant.restaurant_name %></h1>
 
-<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-<% @reservations.each do |reservation| %>
-  <li>
-    <div class="panel">
-    <h4><%= link_to reservation.restaurant.restaurant_name, restaurant_path(reservation) %></h4><h6><%= reservation.restaurant.cuisine %></h6>
-    <%= link_to "Reservation #{reservation.id}", reservation_path(reservation) %><br>
-    When = <%= reservation.date %> - <%= reservation.time_slot %><br>
-    Party of = <%= reservation.guests %><br>
-    <%= reservation.user.name %><br>
-    <%= reservation.user.email %>
-    </div>
-  </li>
-<% end %>
-</ul>
+<br>
+
+<%= image_tag(@restaurant.photo_url, :class => "img_preview") %>
+
+<br><br>
+
+<%= Reservation.capacity?(1, Date.yesterday, 1) %>
+
+<%= link_to "Back to home", root_url %>

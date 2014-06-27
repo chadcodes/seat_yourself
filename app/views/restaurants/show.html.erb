@@ -1,3 +1,4 @@
+<h3>Featured Restaurants</h3>
 
 <h1><%= @restaurant.restaurant_name %></h1>
 <hr>
@@ -21,7 +22,8 @@
 		<!-- to add restaurant_reservation_path(@restaurant)
 		- a reservation form (reservations#new) is yet to be created
 			-->
-		<li class="button success"><%= link_to "Make a Reservation", restaurant_path(@restaurant) %></li>	
+		<li class="button success"><%= link_to "Make a Reservation", restaurant_path(@restaurant) %></li>
+		<%= link_to "Make a Reservation", restaurant_reservations_path(@restaurant), :class => "button" %>
 	<% else %>
 	 	<li>Please <%= link_to "log in", new_session_path, class: 'button success' %> to Make a Reservation</li>
 	<% end %>
