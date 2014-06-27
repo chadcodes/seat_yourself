@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
-    @user_reservations = @user.reservations
-    @all_user_reservations = @user.restaurants
-  
+
 
   end
 
