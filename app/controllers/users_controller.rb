@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create 
-  	@user = User.new
+  	 @user = User.create(user_params)
 
   	if @user.save
   		redirect_to root_url, :notice => "You have successfully created an account"
@@ -41,10 +41,13 @@ class UsersController < ApplicationController
   	@user.destroy
   	redirect_to root_url
 
+    @user.avatar = nil
+    @user.save
+
   end
 
   private
   def user_params
-  	params.require(:user).permit(:name, :email, :notes, :password, :password_confirmation)
+  	params.require(:user).permit(:name, :email, :notes, :password, :password_confirmation, :avatar)
   end
 end
