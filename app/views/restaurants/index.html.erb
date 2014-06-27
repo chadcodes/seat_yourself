@@ -1,5 +1,15 @@
 <h1>Restaurants</h1>
 
+
+
+<% @most_recent_five.each do |t| %>
+<p><%= t.restaurant_name %></p>
+<img src="<%= t.photo_url %>" alt="">
+
+<% end %>
+
+
+
 <% @restaurants.each do |restaurant| %>
 
 <h4><%= link_to restaurant.restaurant_name, restaurant_path(restaurant) %></h4>
