@@ -1,10 +1,10 @@
 class ReservationsController < ApplicationController
   before_filter :ensure_logged_in
 
-  # def index
-  # 	# @reservations = Reservation.all
-  #   @restaurant = Restaurant.find(params[:id])
-  # end
+  def index
+  	@reservation = Reservation.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 
   def show
   	@reservation = Reservation.find(params[:id])
@@ -25,8 +25,19 @@ class ReservationsController < ApplicationController
     if @reservation.destroy
       redirect_to restaurants_path, notice: 'Your reservation was canceled.'
     else
-      flash.now[:alert] = "Something bad happened.  Your reservation still exists."
+      flash.now[:alert] = 'Something bad happened.  Your reservation still exists.'
       render "show"
+    end
+  end
+
+  def create
+    @reservation = Reservation.new(reservation_params)
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    if @reservation.save
+      redirect_to restaurant_reservation_path, notice: 'Your reservation was made.'
+    else
+      flash.now[:alert] = 'Something bad happened.  Your reservation still exists.'
+      render :new
     end
   end
 
@@ -35,8 +46,7 @@ class ReservationsController < ApplicationController
     	params.require(:reservation).permit(
         :date,
         :guests,
-        :time_slot,
-        :user_id,
+        :date,
         :restaurant_id)
     end
 end
