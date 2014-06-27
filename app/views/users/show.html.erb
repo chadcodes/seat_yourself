@@ -11,7 +11,7 @@
 <p>Number of reservations = <%=  @user_reservations.count %></p>
 
 <%  @all_user_reservations.each do |p| %>
-	
+
 	<p><%= p.restaurant_name %></p>
 	<img src="<%= p.photo_url %>" widht="100" height="100" alt="">
 	<p><%= p.street_address %></p>
@@ -22,4 +22,4 @@
 
 
 
-<%= link_to "Back", reservation_path(@user) %>
+<%= link_to "Back to home", root_url %>

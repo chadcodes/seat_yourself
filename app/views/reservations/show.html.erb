@@ -1,12 +1,22 @@
 <h1>Reservations <%= @reservation[:id] %></h1>
 
 <ul>
-	
-	<li>When = <%= @reservation[:date] %> - <%= @reservation[:time_slot] %></li>
+	<li>When = <%= @reservation.date %> - <%= @reservation[:time_slot] %></li>
 	<li>Party of = <%= @reservation[:guests] %></li>
 	<li><%= link_to @reservation.user[:name], user_path %></li>
-	<li><%= @reservation.user[:email] %></li>
 </ul>
 
+You are booked at <%= @restaurant.restaurant_name %>
 
-<%= link_to "Back", reservations_path %>
+<br>
+
+<%= link_to image_tag(@restaurant.photo_url, :class => "img_preview"), @restaurant %>
+
+<br><br>
+
+<%= link_to 'Edit my reservation',
+edit_restaurant_reservation_path %>
+
+<br><br>
+
+<%= link_to "Back to home", root_url %>

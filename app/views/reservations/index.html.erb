@@ -3,7 +3,7 @@
 
 <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
 <% @reservations.each do |reservation| %>
-	<li>
+  <li>
     <div class="panel">
     <h4><%= link_to reservation.restaurant.restaurant_name, restaurant_path(reservation) %></h4><h6><%= reservation.restaurant.cuisine %></h6>
     <%= link_to "Reservation #{reservation.id}", reservation_path(reservation) %><br>
