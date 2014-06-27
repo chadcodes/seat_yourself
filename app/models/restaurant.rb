@@ -1,5 +1,7 @@
 class Restaurant < ActiveRecord::Base
   has_many :reservations
+  has_many :reviews
+  has_many :users, :through => :reservations
 
  def self.search(query)
     # where(:title, query) -> This would return an exact match of the query
