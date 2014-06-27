@@ -1,3 +1,8 @@
+<h3>Featured Restaurants</h3>
+
+
+
+
 <h1><%= @restaurant.restaurant_name %></h1>
 <hr>
 
@@ -14,6 +19,17 @@
 	<li><%= @restaurant.menu %></li>
 </ul>
 
+
+<ul>
+	<% if current_user %>
+		<!-- to add restaurant_reservation_path(@restaurant)
+		- a reservation form (reservations#new) is yet to be created
+			-->
+		<li><%= link_to "Make a Reservation", restaurant_path(@restaurant) %></li>	
+	<% else %>
+	 	<li>Please <%= link_to "log in", new_session_path %> to Make a Reservation</li>
+	<% end %>
+</ul>
 
 
 

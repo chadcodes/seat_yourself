@@ -1,9 +1,27 @@
+<%= render 'layouts/search' %>
+
+
 <h1>Restaurants</h1>
+
+
+<h4>Featured Restaurants</h4
+
+
+<ul>
+<% @most_recent_five.each do |t| %>
+
+<li style="display:inline"><a href="restaurants/<%= t.id %>"><img src="<%= t.photo_url %>" title="<%= t.restaurant_name %>" alt="" width="200" height="150"></a></li>
+<% end %>
+</ul>
+
+
+<hr>
 
 <% @restaurants.each do |restaurant| %>
 
 <h4><%= link_to restaurant.restaurant_name, restaurant_path(restaurant) %></h4>
 <ul>
+	<li><%= restaurant.cuisine %></li>
 	<li>Capacity = <%= restaurant.seats %></li>
 	<li> <%= restaurant.street_address %></li>
 	<li> <%= restaurant.postal_code %></li>
