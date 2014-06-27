@@ -1,0 +1,19 @@
+<h1>Edit your reservation <%= @reservation[:id] %></h1>
+
+<ul>
+  <li>When = <%= @reservation.date %> - <%= @reservation[:time_slot] %></li>
+  <li>Party of = <%= @reservation[:guests] %></li>
+  <li><%= link_to @reservation.user[:name], user_path %></li>
+</ul>
+
+You are booked at <%= @restaurant.restaurant_name %>
+
+<br>
+
+<%= link_to image_tag(@restaurant.photo_url, :class => "img_preview"), @restaurant %>
+
+<br><br>
+
+<%= link_to 'Cancel my reservation', @reservation_path, :method => :delete %>
+<br><br>
+<%= link_to "Back to home", root_url %>

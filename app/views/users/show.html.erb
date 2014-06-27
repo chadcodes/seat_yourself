@@ -21,6 +21,7 @@
 <h4>Reservations</h4>
 <p>Number of reservations = <%=  @user.reservations.count %></p>
 
+<<<<<<< HEAD
 <%  @user.reservations.each do |reservation| %>
 	
 	<p><%= reservation.date %> - %= reservation.time_slot %></p>
@@ -28,10 +29,22 @@
 	<img src="<%= reservation.restaurant.photo_url %>" widht="100" height="100" alt="">
 	<p><%= reservation.restaurant.street_address %></p>
 	<p><%= reservation.restaurant.postal_code %></p>
+=======
+<%  @all_user_reservations.each do |p| %>
+
+	<p><%= p.restaurant_name %></p>
+	<img src="<%= p.photo_url %>" widht="100" height="100" alt="">
+	<p><%= p.street_address %></p>
+	<p><%= p.postal_code %></p>
+>>>>>>> 07ff38e4af33a8077f7df96fc1f57d151a60536c
 	<p>----------------------------</p>
 
 <% end %>
 
 
 
+<<<<<<< HEAD
 
+=======
+<%= link_to "Back to home", root_url %>
+>>>>>>> 07ff38e4af33a8077f7df96fc1f57d151a60536c
