@@ -6,7 +6,7 @@
 
 <br><br>
 
-<%= form_for(@reservation) do |f| %>
+<%= form_for @reservation, url: {action: "create"} do |f| %>
   <% if @reservation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
@@ -30,7 +30,5 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-<%=# Reservation.capacity?(1, DateTime.now.strftime("%Y-%m-%d 15:00:00"), 1) %>
 
 <%= link_to "Back to home", root_url %>

@@ -2,7 +2,15 @@ class Reservation < ActiveRecord::Base
   belongs_to :user
   belongs_to :restaurant
 
-  validate :seats?
+  validates :guests, :date, presence: true
+
+  def available
+    if !restaurant.available(guests, date, user_id)
+      errors.add(:base, "We're full!")
+    end
+  end
+
+  validate :available
 
   # Given a restaurant_id, date and time slot this will return
   # the number of guests booked
@@ -10,11 +18,4 @@ class Reservation < ActiveRecord::Base
   #   Reservation.where(restaurant_id: restaurant_id, date: date, time_slot: time_slot).sum('guests')
   # end
 
-
-  private
-    def seats?
-      if !restaurant.seats?(guests,date)
-        error.add(:base, "We're full!")
-      end
-    end
 end

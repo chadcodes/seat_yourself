@@ -31,13 +31,20 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    # The restaurant and user id is badly hacked in here.  Not sure how to get the
+    # restaurant_id added to the form POST array hash.  It's part of the POST
+    # params but not part of the reservation hash (which is used in the sanitize).
+    rp = reservation_params
+    rp[:restaurant_id] = params[:restaurant_id]
+    rp[:user_id] = session[:user_id]
+    # @user = session[:user_id]
+    @reservation = Reservation.new(rp)
     @restaurant = Restaurant.find(params[:restaurant_id])
     if @reservation.save
-      redirect_to restaurant_reservation_path, notice: 'Your reservation was made.'
+      redirect_to restaurant_path(@restaurant), notice: 'Your reservation was made.'
     else
-      flash.now[:alert] = 'Something bad happened.  Your reservation still exists.'
-      render :new
+      flash.now[:alert] = 'Something bad happened.'
+      render :index
     end
   end
 
@@ -45,8 +52,6 @@ class ReservationsController < ApplicationController
     def reservation_params
     	params.require(:reservation).permit(
         :date,
-        :guests,
-        :date,
-        :restaurant_id)
+        :guests)
     end
 end
