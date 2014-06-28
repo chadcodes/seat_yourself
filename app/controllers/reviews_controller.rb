@@ -1,9 +1,13 @@
 class ReviewsController < ApplicationController
   before_filter :load_restaurant
 
+  def index
+
+  end
+
   def show
   	@review = Review.find(params[:id])
-  	
+
   end
 
 
@@ -24,7 +28,7 @@ class ReviewsController < ApplicationController
   	redirect_to restaurants_path
   end
 
-  
+
 
   def load_restaurant
   	@restaurant = Restaurant.find(params[:restaurant_id])
