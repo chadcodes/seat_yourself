@@ -2,7 +2,7 @@
 
 <div class="row">
 
-	<h1>Seat Yourself ! Reserve your table</h1>
+	<h1>Seat Yourself ! Make a Reservation</h1>
 
 
 	<div class="row reservation">
@@ -20,89 +20,51 @@
 
 	<div class="row">
 
+	<%= link_to "Back", restaurants_path %><br>
 		<div class="medium-8 columns">
-			
-			<h1><%= @restaurant.restaurant_name %></h1>
-<hr>
-
-<%= link_to "Back", restaurants_path %><br>
-<p><a href="/restaurants/#{@restaurant.id}"><img class="th" src="<%= @restaurant[:photo_url] %>" width="250" height="250"></a></p>
-<ul>
-	<li>Capacity = <%= @restaurant.seats %></li>
-	<li>Address = <%= @restaurant.street_address %></li>
-</ul>
-
-<h4>Menu</h4>
-<p> ----------------------------------- </p>
-<ul>
-	<li><%= @restaurant.menu %></li>
-</ul>
-
-
-<ul>
-	<% if current_user %>
-		<!-- to add restaurant_reservation_path(@restaurant)
-		- a reservation form (reservations#new) is yet to be created
-			-->
-		<%= link_to "Make a Reservation", restaurant_reservations_path(@restaurant), :class => "button" %>
-	<% else %>
-	 	<li>Please <%= link_to "log in", new_session_path, class: 'button success' %> to Make a Reservation</li>
-	<% end %>
-</ul>
-
-
-		<div class="reviews">
-		<h4>Reviews</h4>
-			
-			<% @restaurant.reviews.each do |review| %>
-			    <p>
-			      <%= review.comment %>
-			      <p>----------------------------------</p>
-			      <br>
-			      <% if review.user != nil %>
-			       <p><em>by <%= review.user.email %><br> Added on: <%= review.created_at %></em></p> 
-			      
-			      <% end %>
-			    </p>
-  			<% end %>
-
-  			
-  		<% if current_user %>
-
-		  <h4>Add a Review</h4>
-
-		  <%= form_for([@restaurant, @review]) do |f| %>
-		    <% if @review.errors.any? %>
-		      <div id="error_explanation">
-		        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-		        <ul>
-		        <% @review.errors.full_messages.each do |msg| %>
-		          <li><%= msg %></li>
-		        <% end %>
-		        </ul>
-		      </div>
-		    <% end %>
-
-		    <div class="field">
-		      <%= f.label :comment %><br />
-		      <%= f.text_area :comment %>
-		    </div><br>
-		    <div class="actions">
-		      <%= f.submit %>
-		    </div>
-		  <% end %>
-
-		<% else %>
-		  <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
-		<% end %>
-
 		
-		</div>
+		<div class="row">
+			<h1><%= @restaurant.restaurant_name %></h1>
+			<hr>
+			
+			<div class="medium-4 columns">
+
+				<p><a href="/restaurants/#{@restaurant.id}"><img class="th" src="<%= @restaurant[:photo_url] %>" width="250" height="250"></a></p>
+				<ul class="no-bullet">
+					<li>Capacity = <%= @restaurant.seats %></li>
+					<li>Address = <%= @restaurant.street_address %></li>
+				</ul>
+
+			</div>
+
+			<div class="medium-8 columns">
+
+				<h4>Menu</h4>
+
+				<ul>
+					<li><%= @restaurant.menu %></li>
+				</ul>
+
+			</div>
+
+</div>	
+
+	<ul>
+		<% if current_user %>
+			<!-- to add restaurant_reservation_path(@restaurant)
+			- a reservation form (reservations#new) is yet to be created
+				-->
+			<%= link_to "Make a Reservation", restaurant_reservations_path(@restaurant), :class => "button no-bullet" %>
+		<% else %>
+		 	<li>Please <%= link_to "log in", new_session_path %> to Make a Reservation</li>
+		<% end %>
+	</ul>
 
 
+	<%= render 'review' %>
 
-		</div>
+
+</div>
 
 
 	
