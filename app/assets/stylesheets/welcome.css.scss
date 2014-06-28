@@ -6,72 +6,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'application';
+
 
 body.welcome {
+	
 	background: #fcfcf4;	
 
-	h1 {
-	color: #7f0000;
-	}
-
-	.search {
-	padding:5%;
-	background: rgba(245,245,220,.5);
-	position:absolute;
-	top:0;
-	left:0;
-
-	.search_options {
-	padding: 0;
-	
-	}
-
-	.input-append {
-	padding: 0 5%
-	}
-
-	button.success {
-	padding-right: 5%;
-	background: #333333;
-	}
-
-	
-
-	.tabs-content {
-	background: #dcdcc6;
-	border-radius: 0 10px 10px 10px;
-	}
-	
-
-	.tabs dd, .tabs .tab-title {
-		width:35%;
-
-			&.active a {
-			background: #dcdcc6;
+		h1 {
+		color: #7f0000;
 		}
+
+		.search {
+		padding:5%;
+		background: rgba(245,245,220,.5);
+		position:absolute;
+		top:0;
+		left:0;
+
 		
-	}
+			.search-box--welcome {
+				@extend .search-box;			
 
-}
+			}
+			
+		}/*end .search */
+				
 
-
-
-.tabs dd > a, .tabs .tab-title {
-	
-	a {
-	background: #f5f5dc;
-
-	}
-
-	&:nth-child(1) a {
-		border-top-left-radius: 10px;
-	}
-
-	&:nth-child(2) a {
-		border-top-right-radius: 10px;
-	}
-}
-}
+}/*end body.welcome */
 
 
 

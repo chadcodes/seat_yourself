@@ -15,14 +15,26 @@
  * require animate.min
  */
 
-/* Application */
+
+/* Color Variables */
+
+
+$tab-active: #dcdcc6;
+$tab:lighten($tab-active,10);
+$search-btn: darken($tab-active,50);
+
+/* Layout Variables */
+$tab-width:35%;
+$radius:10px;
+$margin:10%;
+
 
 .button a {
 	color:white
 }
 
 .margin {
-	margin-top: 20%;
+	margin-top: $margin + 10%;
 }
 
 body {
@@ -36,9 +48,65 @@ main {
 
 .top-bar {
 	background: #7f0000;
-	.right {
-	background: #7f0000;
-	}
+
+		.right {
+		background: #7f0000;
+		}
+}
+
+/* search-box styling */
+
+.search-box {
+	padding: 0;
+
+		.input-append {
+			padding: 0 5%
+		}
+
+		button.success {
+			padding-right: 5%;
+			background: $search-btn;
+
+			&:hover {
+				background: darken($search-btn, 10)
+			}
+		}
+
+
+		.tabs-content {
+			background: #dcdcc6;
+			border-radius: 0 $radius $radius $radius;
+		}
+
+
+		.tabs dd, .tabs .tab-title {
+			width:$tab-width;
+
+				&.active a {
+					background: $tab-active;
+				}
+		
+		}
+
+		.tabs dd > a, .tabs .tab-title {
+			
+			a {
+				background: $tab;;
+			}
+
+			&:nth-child(1) a {
+				border-top-left-radius: $radius;
+			}
+
+			&:nth-child(2) a {
+				border-top-right-radius: $radius;
+			}
+		}
 }
 
 
+
+.search-box--restaurant {
+	@extend .search-box;
+		
+}

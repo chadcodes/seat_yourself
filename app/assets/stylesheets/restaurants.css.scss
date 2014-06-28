@@ -2,12 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
- background: #fcfcf4;		
+
+
+
+/* Color Variables */
+
+$tab-active: #dcdcc6;
+$beige : $tab-active;
+$tab:lighten($tab-active,10);
+$search-btn: darken($tab-active,50);
+
+/* Layout Variables */
+$tab-width:10%;
+$radius:10px;
+$margin:10%;
+
+.margin {
+	margin-top:$margin - 5%!important;
 }
 
-.featured div {
+.search-box--restaurant {
+	.tabs dd, .tabs .tab-title {
+		 
+		 width:$tab-width + 30%!important;
 
-	background: #f5f5dc;
-	margin:0;
+				a {
+				font-size:10px;
+				font-weight: bold;
+				}
+
+				&.active a {
+					background: $tab-active;
+				}
+		
+		}
 }
+
+.restaurants_list img {
+	width: 150px;
+	height: 150px;
+
+}
+
+/* restaurants - sidebar */
+.featured img {
+	display:inline-block;
+	margin: auto;
+}
+
+.reservation {
+  background: $beige;
+  border-radius: $radius;
+}
+
+.form {
+	height: 150px;
+	width: 800px;
+	border: 1px solid #666;
+}
+
+.flash {
+	color: #4c0000;
+	font-weight: bold;
+}
+
