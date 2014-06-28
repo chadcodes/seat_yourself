@@ -1,31 +1,94 @@
-<%= render 'layouts/search' %>
+<div class="background">
+	<div class="row">
+	<div class="margin"></div>
+
+		<h2>Seat Yourself ! Make a Reservation</h2>
 
 
-<h1>Restaurants</h1>
+		<div class="row reservation">
+			
+			<div class="medium-12 columns">
+				<%= render 'reservation_form' %>
+
+			</div>
+
+		</div>
+	</div>
+</div><!-- background	 -->
 
 
-<h4>Featured Restaurants</h4
+	<br><br>
 
+	<div class="row">
 
-<ul>
-<% @most_recent_five.each do |t| %>
+		<div class="medium-8 columns restaurants_list">
+			<% @restaurants.each do |restaurant| %>
 
-<li style="display:inline"><a href="restaurants/<%= t.id %>"><img src="<%= t.photo_url %>" title="<%= t.restaurant_name %>" alt="" width="200" height="150"></a></li>
-<% end %>
-</ul>
+			<div class="row">
 
+				<div class="medium-4 columns">
+				<%= link_to image_tag(restaurant.photo_url, class: 'th'),restaurant_path(restaurant) %>
+				</div>
 
-<hr>
+				<div class="medium-8 columns">
+						<h4><%= link_to restaurant.restaurant_name, restaurant_path(restaurant) %> </h4>
+						<span>------------------------------------</span>
+						<ul class="no-bullet">				
+							<li> <%= restaurant.street_address %> |  <%= restaurant.cuisine %></li>				
+						</ul>
+				</div>
 
-<% @restaurants.each do |restaurant| %>
+			</div>
+			<hr>
 
-<h4><%= link_to restaurant.restaurant_name, restaurant_path(restaurant) %></h4>
-<ul>
-	<li><%= restaurant.cuisine %></li>
-	<li>Capacity = <%= restaurant.seats %></li>
-	<li> <%= restaurant.street_address %></li>
-	<li> <%= restaurant.postal_code %></li>
+			<% end %>
+			<hr>
+		</div>
+
 	
-</ul>
 
-<% end %>
+		<div class="medium-3 columns sidebar">
+
+
+			<%= render 'search' %>
+		
+
+		<div class="row">
+
+			<div class="medium-12 columns">
+			<h5>New in Town!</h5>
+
+				 <%= render 'new_restaurant' %>
+				
+			</div>
+			
+			<!-- Featured restaurants -->
+			<div class="medium-12 columns featured">
+				<h5>Featured Restaurants</h5>
+
+				<%= render 'featured_restaurant' %>
+
+			</div>
+
+			<!-- Available Tonight! -->
+			<div class="medium-12 columns">
+			<h5 class="flash">Available Tonight!</h5>
+				<%= render 'available_restaurant' %>
+
+			</div>
+		
+			<!-- New restaurants -->
+			<div class="medium-12 columns">
+
+				<%= render 'new_restaurant' %>
+
+			</div>
+
+
+			</div><!-- row -->	
+		 </div>
+
+	</div><!-- row -->		
+
+
+</div><!-- row -->

@@ -12,15 +12,151 @@
  *
  *= require_tree .
  * require_self
+ * require animate.min
  */
 
 
+/* Color Variables */
+
+$tab-active: #dcdcc6;
+$beige : $tab-active;
+$tab:lighten($tab-active,10);
+$brown: darken($tab-active,50);
+
+/* Layout Variables */
+
+$tab-width:35%;
+$radius:10px;
+$margin:10%;
+$border: 2px solid #fff;
+$font_lobster: 'Lobster', cursive;
+
+
+
+.radius {
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
+}
 
 .button a {
 	color:white
 }
 
 .margin {
-	margin-top: 100px;
+	margin-top: $margin + 10%;
 }
 
+.top-bar .right, 
+.top-bar-section ul li {
+	background: $brown!important;
+}
+
+.alert-box {
+	margin:15px auto 0 auto;
+	width: 50%;
+}
+
+body {
+ background: #fcfcf4;
+	
+}
+
+main {
+	background:none;
+}
+
+h1 {
+	color: #7f0000;
+	font-family: $font_lobster; 
+	font-size: 70px;
+}
+
+h2 {
+	@extend h1;
+	font-size: 50px;
+}
+
+.top-bar {
+	background: #7f0000;
+
+		.right {
+		background: #7f0000;
+		}
+}
+
+/* search-box styling */
+
+.search-box {
+	padding: 0;
+
+		.input-append {
+			padding: 0 5%
+		}
+
+		button.success {
+			padding-right: 5%;
+			background: $brown;
+
+			&:hover {
+				background: darken($brown, 10)
+			}
+		}
+
+
+		.tabs-content {
+			background: #dcdcc6;
+			border-radius: 0 $radius $radius $radius;
+			border: $border;
+			border-top: none;
+		}
+
+
+		.tabs dd, .tabs .tab-title {
+			width:$tab-width;
+
+				&.active a {
+					background: $tab-active;
+				}
+		
+		}
+
+		.tabs dd > a, .tabs .tab-title {
+			
+			a {
+				background: $tab;;
+			}
+
+			&:nth-child(1) a {
+				@extend .radius;
+				border: $border;
+				border-bottom: none;
+				border-right: none;
+			}
+
+			&:nth-child(2) a {
+				@extend .radius;
+				border: $border;
+				border-bottom: none;
+				border-left: none;
+			}
+		}
+}
+
+
+
+.search-box--restaurant {
+	@extend .search-box;
+		
+}
+
+#contact_us {
+	border-radius: $radius;
+
+	.submit {
+		background: $brown;
+
+		&:hover {
+				background: darken($brown, 10)
+			}
+	}
+}

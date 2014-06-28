@@ -2,15 +2,16 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Get Seated" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Table Now!" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Get Seated" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   </head>
-  <body>
+  <body class="<%= @body %>">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
@@ -18,15 +19,19 @@
 
       <div class="container">
 
-          <div class="row">
+       
 
            <%= render 'layouts/messages' %>
            
            <%= yield %>
 
 
-          </div>
+     
       </div>
+
+    
     </main>
+  
+
   </body>
 </html>

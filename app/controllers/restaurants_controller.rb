@@ -1,6 +1,8 @@
 class RestaurantsController < ApplicationController
 
+
   def index
+    @body = "restaurant"
   	@restaurants = Restaurant.all
   	# will use a filter based on popularity or occupancy afterwards
   	@most_recent_five = Restaurant.most_recent_five
@@ -14,8 +16,10 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @body = "restaurant"
   	@restaurant = Restaurant.find(params[:id])
     @review = @restaurant.reviews.build
+    @most_recent_five = Restaurant.most_recent_five
   end
 
   def restaurant_params

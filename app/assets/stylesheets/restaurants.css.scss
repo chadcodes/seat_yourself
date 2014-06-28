@@ -1,3 +1,90 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+/* Color Variables */
+
+$tab-active: #dcdcc6;
+$beige : $tab-active;
+$tab:lighten($tab-active,10);
+$search-btn: darken($tab-active,50);
+
+/* Layout Variables */
+$tab-width:10%;
+$radius:10px;
+$margin:10%;
+
+body.restaurant main {
+	padding:0;
+}
+.margin {
+	margin-top:$margin - 7%!important;
+}
+
+.search-box--restaurant {
+	.tabs dd, .tabs .tab-title {
+		 
+		 width:$tab-width + 30%!important;
+
+				a {
+				font-size:14px;
+				font-weight: bold;
+				}
+
+				&.active a {
+					background: $tab-active;
+				}
+		
+		}
+}
+
+.restaurants_list img {
+	width: 150px;
+	height: 150px;
+
+}
+
+/* restaurants - sidebar */
+.featured img {
+	display:inline-block;
+	margin: auto;
+}
+
+.reservation {
+  border-radius: $radius;
+  
+}
+
+
+.background {
+  width: 100%;
+  height: 366px;
+  display: block;
+  position: relative;
+}
+
+.background::after {
+ content: "";
+ background: url(http://picjumbo.picjumbocom.netdna-cdn.com/wp-content/uploads/IMG_7111-1300x866.jpg) no-repeat;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
+
+.form {
+	border-radius: $radius;
+	border: 1px solid $beige;
+}
+
+.flash {
+	color: #4c0000;
+	font-weight: bold;
+}
+

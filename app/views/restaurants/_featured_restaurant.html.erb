@@ -1,0 +1,18 @@
+
+
+				<ul class="example-orbit-content" data-orbit data-options="animation:slide; pause_on_hover:true; animation_speed:3000; navigation_arrows:true; bullets:false;  slide_number:false',">
+				
+				<% @most_recent_five.each do |featured| %>
+				  <li data-orbit-slide="headline-3">
+				    <div>
+
+					  <%= link_to image_tag(featured.photo_url), restaurant_path(featured) %>
+				    
+
+				      <h4 class="text-center"><%= link_to featured.restaurant_name, restaurant_path(featured) %></h4>
+				    </div>
+				  </li>
+				  
+				  <% end %>
+
+				</ul>

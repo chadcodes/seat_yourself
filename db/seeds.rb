@@ -27,6 +27,7 @@
 # end
 
 
+
 # # create some restaurants
 # restaurants = []
 # i = 0
@@ -43,6 +44,24 @@
 #   restaurants.push(new_restaurant)
 #   i += 1
 # end
+
+# create some restaurants
+restaurants = []
+i = 0
+8.times do
+  r_name = ["Ponderosa", "Pizza Delight", "Boston Pizza", "Captain Johns", "St. Huberts", "Swiss Chalet", "Xola", "Beach Tree"]
+  menu = "stuff"
+  seats = 50
+  street_address = "54 Main St."
+  postal_code = "M1M 1M1"
+   photo_url = "http://lorempixel.com/450/450/food/" + rand(1..9).to_s + "/"
+  price_range = rand(1..4)
+  cuisine = ["Canadian", "Pizza", "Italian", "Seafood", "Chicken", "Rotisserie", "Mexican", "British"]
+  new_restaurant = [r_name[i], menu, seats, street_address, postal_code, photo_url, price_range, cuisine[i]]
+  restaurants.push(new_restaurant)
+  i += 1
+end
+
 
 # restaurants.each do |name, menu, seats, street_address, postal_code, photo_url, price_range, cuisine|
 #   Restaurant.create(
