@@ -1,31 +1,59 @@
-<%= render 'layouts/search' %>
+<br>
+<div class="row featured">
 
 
-<h1>Restaurants</h1>
+
+		<div class="medium-12 columns right">
+			<%= render 'layouts/search' %>
+		</div>
 
 
-<h4>Featured Restaurants</h4
+
+	<div class="row ">
+		<div class="medium-10 medium-offset-1 columns">
+			<h4>Featured Restaurants</h4>
 
 
-<ul>
-<% @most_recent_five.each do |t| %>
+			<ul class="small-block-grid-5">
+				<% @most_recent_five.each do |t| %>
+					<li style="display:inline"><a href="restaurants/<%= t.id %>"><img src="<%= t.photo_url %>" title="<%= t.restaurant_name %>" alt="" width="150" height="100"></a></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 
-<li style="display:inline"><a href="restaurants/<%= t.id %>"><img src="<%= t.photo_url %>" title="<%= t.restaurant_name %>" alt="" width="200" height="150"></a></li>
-<% end %>
-</ul>
+</div><br>
 
 
-<hr>
-
-<% @restaurants.each do |restaurant| %>
-
-<h4><%= link_to restaurant.restaurant_name, restaurant_path(restaurant) %></h4>
-<ul>
-	<li><%= restaurant.cuisine %></li>
-	<li>Capacity = <%= restaurant.seats %></li>
-	<li> <%= restaurant.street_address %></li>
-	<li> <%= restaurant.postal_code %></li>
 	
-</ul>
 
-<% end %>
+<div class="row">
+
+<div class="medium-12 columns">
+
+	<% @restaurants.each do |restaurant| %>
+	<div class="row">
+		<div class="medium-2 columns"><%= link_to image_tag(restaurant.photo_url), restaurant_path(restaurant) %></div>
+
+		<div class="medium-10 columns">
+
+			<h4><%= link_to restaurant.restaurant_name, restaurant_path(restaurant) %></h4>
+			<ul>
+				<li><%= restaurant.cuisine %></li>
+				<li>Capacity = <%= restaurant.seats %></li>
+				<li> <%= restaurant.street_address %></li>
+				<li> <%= restaurant.postal_code %></li>
+				
+			</ul>
+
+		</div>
+	</div><!-- row -->
+	<hr>
+
+	<% end %>
+ </div>
+
+ </div><!-- row -->
+
+</div>
+

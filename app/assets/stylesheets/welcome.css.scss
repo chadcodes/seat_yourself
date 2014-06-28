@@ -7,16 +7,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body {
+body.welcome {
 	background: #fcfcf4;	
 
 	h1 {
 	color: #7f0000;
 	}
-}
 
-
-.search {
+	.search {
 	padding:5%;
 	background: rgba(245,245,220,.5);
 	position:absolute;
@@ -47,16 +45,22 @@ body {
 
 	.tabs dd, .tabs .tab-title {
 		width:35%;
+
+			&.active a {
+			background: #dcdcc6;
+		}
 		
 	}
 
 }
 
 
+
 .tabs dd > a, .tabs .tab-title {
 	
 	a {
-	background: #dcdcc6;
+	background: #f5f5dc;
+
 	}
 
 	&:nth-child(1) a {
@@ -67,3 +71,11 @@ body {
 		border-top-right-radius: 10px;
 	}
 }
+}
+
+
+
+
+
+
+
