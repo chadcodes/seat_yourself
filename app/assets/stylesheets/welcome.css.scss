@@ -9,24 +9,25 @@
 @import 'application';
 
 
+
+.margin {
+	margin-top: $margin + 20%;
+}
+
 body.welcome {
 	
 	background: #fcfcf4;	
 
-		h1 {
-		color: #7f0000;
-		}
 
 		.search {
 		padding:5%;
+		margin-top: 8%;
 		background: rgba(245,245,220,.5);
-		position:absolute;
-		top:0;
-		left:0;
+	
 
 		
 			.search-box--welcome {
-				@extend .search-box;			
+				@extend .search-box;
 
 			}
 			

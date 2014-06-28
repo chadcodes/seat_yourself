@@ -18,16 +18,25 @@
 
 /* Color Variables */
 
-
 $tab-active: #dcdcc6;
+$beige : $tab-active;
 $tab:lighten($tab-active,10);
 $search-btn: darken($tab-active,50);
 
 /* Layout Variables */
+
 $tab-width:35%;
 $radius:10px;
 $margin:10%;
+$border: 2px solid #fff;
+$font_lobster: 'Lobster', cursive;
 
+
+
+.radius {
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
+}
 
 .button a {
 	color:white
@@ -49,6 +58,17 @@ body {
 
 main {
 	background:none;
+}
+
+h1 {
+	color: #7f0000;
+	font-family: $font_lobster; 
+	font-size: 70px;
+}
+
+h2 {
+	@extend h1;
+	font-size: 50px;
 }
 
 .top-bar {
@@ -81,6 +101,8 @@ main {
 		.tabs-content {
 			background: #dcdcc6;
 			border-radius: 0 $radius $radius $radius;
+			border: $border;
+			border-top: none;
 		}
 
 
@@ -100,11 +122,17 @@ main {
 			}
 
 			&:nth-child(1) a {
-				border-top-left-radius: $radius;
+				@extend .radius;
+				border: $border;
+				border-bottom: none;
+				border-right: none;
 			}
 
 			&:nth-child(2) a {
-				border-top-right-radius: $radius;
+				@extend .radius;
+				border: $border;
+				border-bottom: none;
+				border-left: none;
 			}
 		}
 }

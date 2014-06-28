@@ -1,9 +1,9 @@
-<div class="margin"></div>
+<div class="background">
 
 <div class="row">
+<div class="margin"></div>
 
-	<h1>Seat Yourself ! Make a Reservation</h1>
-
+	<h2>Seat Yourself ! Make a Reservation</h2>
 
 	<div class="row reservation">
 		
@@ -14,8 +14,8 @@
 
 	</div>
 
+</div>
 
-	<hr>
 	<br>
 
 	<div class="row">
@@ -24,7 +24,7 @@
 		<div class="medium-8 columns">
 		
 		<div class="row">
-			<h1><%= @restaurant.restaurant_name %></h1>
+			<h3><%= @restaurant.restaurant_name %></h3>
 			<hr>
 			
 			<div class="medium-4 columns">
@@ -100,14 +100,7 @@
 
 			</div>
 		
-			<!-- New restaurants -->
-			<div class="medium-12 columns">
-
-				<%= render 'new_restaurant' %>
-
-			</div>
-
-
+			
 			</div><!-- row -->	
 		 </div>
 
