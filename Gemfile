@@ -36,6 +36,8 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Add in Foundation Framework
 gem 'foundation-rails'
 
+gem 'foundation-icons-sass-rails', '~> 3.0.0'
+
 group :development  do
   gem 'spring'
   gem 'pry-rails'

@@ -21,7 +21,7 @@
 $tab-active: #dcdcc6;
 $beige : $tab-active;
 $tab:lighten($tab-active,10);
-$search-btn: darken($tab-active,50);
+$brown: darken($tab-active,50);
 
 /* Layout Variables */
 
@@ -44,6 +44,11 @@ $font_lobster: 'Lobster', cursive;
 
 .margin {
 	margin-top: $margin + 10%;
+}
+
+.top-bar .right, 
+.top-bar-section ul li {
+	background: $brown!important;
 }
 
 .alert-box {
@@ -90,10 +95,10 @@ h2 {
 
 		button.success {
 			padding-right: 5%;
-			background: $search-btn;
+			background: $brown;
 
 			&:hover {
-				background: darken($search-btn, 10)
+				background: darken($brown, 10)
 			}
 		}
 
@@ -142,4 +147,16 @@ h2 {
 .search-box--restaurant {
 	@extend .search-box;
 		
+}
+
+#contact_us {
+	border-radius: $radius;
+
+	.submit {
+		background: $brown;
+
+		&:hover {
+				background: darken($brown, 10)
+			}
+	}
 }
