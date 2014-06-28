@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require foundation
+//= require supersized.3.2.7.min
+//= require turbolinks
 // require_tree .
 
 $(function() {
