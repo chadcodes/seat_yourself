@@ -37,7 +37,6 @@ class ReservationsController < ApplicationController
     rp = reservation_params
     rp[:restaurant_id] = params[:restaurant_id]
     rp[:user_id] = session[:user_id]
-    # @user = session[:user_id]
     @reservation = Reservation.new(rp)
     @restaurant = Restaurant.find(params[:restaurant_id])
     if @reservation.save
