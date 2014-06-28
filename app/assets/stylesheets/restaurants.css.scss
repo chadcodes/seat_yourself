@@ -51,14 +51,12 @@ $margin:10%;
 }
 
 .reservation {
-  background: $beige;
   border-radius: $radius;
 }
 
 .form {
-	height: 150px;
-	width: 800px;
-	border: 1px solid #666;
+	border-radius: $radius;
+	border: 1px solid $beige;
 }
 
 .flash {

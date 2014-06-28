@@ -1,9 +1,31 @@
-<h3>Featured Restaurants</h3>
+<div class="margin"></div>
 
-<h1><%= @restaurant.restaurant_name %></h1>
+<div class="row">
+
+	<h1>Seat Yourself ! Reserve your table</h1>
+
+
+	<div class="row reservation">
+		
+		<div class="medium-12 columns">
+			<%= render 'reservation_form' %>
+
+		</div>
+
+	</div>
+
+
+	<hr>
+	<br>
+
+	<div class="row">
+
+		<div class="medium-8 columns">
+			
+			<h1><%= @restaurant.restaurant_name %></h1>
 <hr>
 
-<%= link_to "Back", restaurants_path %>
+<%= link_to "Back", restaurants_path %><br>
 <p><a href="/restaurants/#{@restaurant.id}"><img class="th" src="<%= @restaurant[:photo_url] %>" width="250" height="250"></a></p>
 <ul>
 	<li>Capacity = <%= @restaurant.seats %></li>
@@ -77,6 +99,61 @@
 
 		
 		</div>
+
+
+
+		</div>
+
+
+	
+
+
+		<div class="medium-3 columns sidebar">
+
+
+			<%= render 'search' %>
+		
+
+		<div class="row">
+
+			<div class="medium-12 columns">
+			<h5>New in Town!</h5>
+
+				 <%= render 'new_restaurant' %>
+				
+			</div>
+			
+			<!-- Featured restaurants -->
+			<div class="medium-12 columns featured">
+				<h5>Featured Restaurants</h5>
+
+				<%= render 'featured_restaurant' %>
+
+			</div>
+
+			<!-- Available Tonight! -->
+			<div class="medium-12 columns">
+			<h5 class="flash">Available Tonight!</h5>
+				<%= render 'available_restaurant' %>
+
+			</div>
+		
+			<!-- New restaurants -->
+			<div class="medium-12 columns">
+
+				<%= render 'new_restaurant' %>
+
+			</div>
+
+
+			</div><!-- row -->	
+		 </div>
+
+	</div><!-- row -->		
+
+
+</div><!-- row -->
+
 
 
 

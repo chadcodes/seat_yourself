@@ -1,39 +1,43 @@
 
 
+<div class="search-box--restaurant">
 
-	<%= form_for(restaurants_path, class: "navbar-form", id: "search-form") do %>
+	  <ul class="tabs" data-tab>
+	  <li class="tab-title active"><a href="#search_by_restaurant">Restaurant</a></li>
+	  <li class="tab-title"><a href="#search_by_cuisine">Cuisine</a></li>
+	 
+	</ul>
 
-			<br>
-		    	
-		    	<!-- options select goes here -->
+
+	<div class="tabs-content">
+	  <div class="content active" id="search_by_restaurant">
+			<%= form_tag(restaurants_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+		    <div class="input-append">
+		      <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants (select form required)" %>
 		      <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
 		           of using a Rails form helper -->
 
-		   		<div class="form">
+		       <%= render 'reservation' %>
+		      <button  class="button success tiny right radius" type="submit">Search<i class="icon-search"></i></button>
+		    </div>
+		  <% end %>
+	  </div>
 
-					<%= text_area_tag(:message, "Hi, nice site", size: "24x6") %>
 
-					<%= telephone_field(:user, :phone) %>
-					<%= date_field(:user, :born_on) %>
-					<%= datetime_field(:user, :meeting_time) %>
-					<%= datetime_local_field(:user, :graduation_day) %>
-					<%= month_field(:user, :birthday_month) %>
-					<%= week_field(:user, :birthday_week) %>
-					<%= url_field(:user, :homepage) %>
-					<%= email_field(:user, :address) %>
-					<%= color_field(:user, :favorite_color) %>
-					<%= time_field(:task, :started_at) %>
-					<%= number_field(:product, :price, in: 1.0..20.0, step: 0.5) %>
-					<%= range_field(:product, :discount, in: 1..100) %>
-		   		
+	  <div class="content" id="search_by_cuisine">
+			<%= form_tag(restaurants_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+		    <div class="input-append">
+		      <%= text_field_tag :search, params[:search], placeholder: "Search Cuisine Type (select form required)" %>
+		      <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
+		           of using a Rails form helper -->
 
-			      <button  class="button success tiny right radius" type="submit">Search<i class="icon-search"></i></button>
 
-			 <br>
+	       		<%= render 'reservation' %>
+		      <button  class="button success tiny right radius" type="submit">Search<i class="icon-search"></i></button>
+		    </div>
+		  <% end %>
+	  </div>
+	 
+	</div><!-- tabs-content -->
 
-		      </div>
-
-		      
-
-    <% end %>
-	
+</div>
