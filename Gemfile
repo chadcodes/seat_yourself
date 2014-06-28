@@ -32,8 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
-
-# Add in Foundation Framework
+# Give me some Foundation
 gem 'foundation-rails'
 
 group :development  do
