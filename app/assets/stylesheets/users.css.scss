@@ -1,3 +1,46 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Color Variables */
+
+$tab-active: #dcdcc6;
+$beige : $tab-active;
+$light_br: #D4CCC5;
+$light_br_light: lighten($light_br, 15);
+$tab:lighten($tab-active,10);
+$brown: darken($tab-active,50);
+
+/* Layout Variables */
+
+$tab-width:35%;
+$radius:10px;
+$margin:10%;
+$border: 2px solid #fff;
+$font_lobster: 'Lobster', cursive;
+
+
+.profile {
+	border-radius: $radius;
+}
+
+.user_profile main {
+	background: #EFECE5;
+
+	table thead {
+		background: $light_br;
+	}
+
+	tbody {
+		background: $light_br_light;
+	}	
+
+	.button.secondary {
+		background:darken($light_br_light,20); 
+
+		&.hover {
+			background:darken($light_br_light,30); 
+		}
+	}
+
+}

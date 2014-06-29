@@ -11,21 +11,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br/>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div><br>
 
   <div class="field">
-    <%= f.label :email %><br/>
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div><br>
   
   <div class="field">
-    <%= f.label :password %><br/>
+    <%= f.label :password %>
     <%= f.password_field :password %>
   </div><br>
   <div class="field">
-    <%= f.label :password_confirmation %><br/>
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div><br>
 
@@ -34,5 +34,5 @@
    <%= f.file_field :avatar %>
  </div><br>
  
-  <div class="actions"><%= f.submit %></div><br>
+  <div class="actions"><%= f.submit class: "button success radius small right", value: "Create Account" %></div><br>
 <% end %>

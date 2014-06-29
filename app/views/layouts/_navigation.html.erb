@@ -7,50 +7,17 @@
   <div class="top-bar-section">
     <ul class="right">
      <li><a href="#" data-reveal-id="contact_us">Contact Us!</a></li>
+   
       <%= render 'layouts/navigation_links' %>
+
     </ul>
   </div>
 
-  <div id="contact_us" class="reveal-modal medium" data-reveal>
-	  <h3>Contact Us!</h3>
-	  <hr>
+  	<!-- modal -->
 
-		<form>
-		  <div class="row">
-		    <div class="large-12 columns">
-		      <label><strong>Name:</strong>
-		        <input type="text" placeholder="Your Name" />
-		      </label>
-		    </div>
-		  </div>
-
-		  <div class="row">
-		    <div class="large-12 columns">
-		      <label><strong>Email:</strong>
-		        <input type="text" placeholder="Your Email" />
-		      </label>
-		    </div>
-		  </div>
-
-		  <div class="row">
-		    <div class="large-12 columns">
-		      <label><strong>Your Message</strong>
-		        <textarea placeholder="Your message"></textarea>
-		      </label>
-		    </div>
-		  </div>
-
-		  <div class="row">
-                <div class="large-12 columns">
-                 
-                  <input type="submit" class="submit button success radius right"  value="Send" name="submit"/>
-                </div>
-              </div><!-- row -->
-
-		</form>
-	  
-	  <a class="close-reveal-modal">&#215;</a>
- </div>
+  	<div id="contact_us" class="reveal-modal medium" data-reveal>
+		<%= render 'layouts/contact' %>
+	</div>
 
 
 </nav>

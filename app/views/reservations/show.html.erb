@@ -10,12 +10,12 @@ You are booked at <%= @restaurant.restaurant_name %>
 
 <br>
 
-<%= link_to image_tag(@restaurant.photo_url, :class => "img_preview"), @restaurant %>
+<%= link_to image_tag(@restaurant.photo_url), :class => "img_preview", @restaurant %>
 
 <br><br>
 
 <%= link_to 'Edit my reservation',
-edit_restaurant_reservation_path %>
+edit_restaurant_reservation_path(@restaurant[:id]) %>
 
 <br><br>
 

@@ -52,7 +52,7 @@ $font_lobster: 'Lobster', cursive;
 }
 
 .alert-box {
-	margin:15px auto 0 auto;
+	margin:12px auto 0 auto;
 	width: 50%;
 }
 
@@ -82,6 +82,11 @@ h2 {
 		.right {
 		background: #7f0000;
 		}
+}
+
+.signed_in a {
+	
+	color: $beige;
 }
 
 /* search-box styling */

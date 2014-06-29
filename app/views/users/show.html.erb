@@ -1,37 +1,51 @@
-<h1>User # <%= @user[:name] %></h1>
+<div class="margin"></div>
 
+<div class="row profile">
 
-<ul>
-	<li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
-	<li><%= link_to "Delete Account", user_path(@user) , method: :delete, data: { confirm: 'Are you sure?' } %></li>
-	<li><%= link_to "Back", root_url %></li>
-</ul>
-
-<p><%= image_tag @user.avatar.url(:medium) %></p>
-
-<ul>
-	<li><%= link_to @user[:name], user_path(@user) %></li>
-	<li><%= @user[:email]%></li>
-
-</ul>
-
-
-
-
-<h4>Reservations</h4>
-<p>Number of reservations = <%=  @user.reservations.count %></p>
-
-
-<%  @user.reservations.each do |reservation| %>
+	<div class="medium-10 columns">
 	
-	<p><%= reservation.date %> - %= reservation.time_slot %></p>
-	<p><%= reservation.restaurant.restaurant_name %></p>
-	<img src="<%= reservation.restaurant.photo_url %>" widht="100" height="100" alt="">
-	<p><%= reservation.restaurant.street_address %></p>
-	<p><%= reservation.restaurant.postal_code %></p>
-
-<% end %>
 
 
-<%= link_to "Back to home", root_url %>
+		<h3><%= @user[:name] %>-<span>(<%= @user[:email]%>)</span></h3>
 
+
+		<p><%= image_tag @user.avatar.url(:medium), :class => 'th' %></p>
+
+		<%= link_to "Back", restaurants_url, :class => "button secondary small" %> <%= link_to 'Edit Profile', edit_user_path(@user), :class => "button secondary small" %> <%= link_to "Delete Account", user_path(@user) , :class => "button alert small", method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+
+
+	
+		<h4>My reservations</h4>
+		<hr>
+		<p>Number of reservations = <%=  @user.reservations.count %></p>
+
+			<table>
+			  <thead>
+			    <tr>
+			      <th width="400">Restaurant</th>
+			      <th width="250">Location</th>
+			      <th width="259">Date & Time</th>
+
+			    </tr>
+			  </thead>
+
+			  	<%  @user.reservations.each do |reservation| %>
+				  <tbody>
+				    <tr>
+				      <td><strong><%= link_to reservation.restaurant.restaurant_name, restaurant_path(reservation.restaurant[:id]) %></strong> </td>
+				      <td><%= reservation.restaurant.postal_code %> | <%= reservation.restaurant.street_address %></td>
+				      <td><%= reservation.date %></td>		 
+				    </tr>
+				<% end %>
+
+			  </tbody>
+			</table>
+
+
+
+			
+	</div>
+
+</div><!-- row -->
