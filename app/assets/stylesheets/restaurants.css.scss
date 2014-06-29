@@ -88,3 +88,54 @@ body.restaurant main {
 	font-weight: bold;
 }
 
+/*Sliders sidebar customization */
+
+.orbit-container .orbit-slides-container img {
+	display: block;
+	max-width: 80%;
+	margin: auto;
+	border-radius: $radius;
+	border: 5px solid $search-btn;
+	box-shadow: 5px 5px 10px #eee;
+}
+
+.orbit-container .orbit-next {
+	
+	span {
+		border-left-color: #000;
+		top: 30%;
+		left: 70%;
+
+			&.hover {
+				border-left-color: #000;
+			}
+	}
+
+
+}
+
+.orbit-container .orbit-prev {
+	
+	span {
+		border-right-color: #000;
+		top: 30%;
+		left: -10%;
+
+			&.hover {
+				border-left-color: #000;
+			}
+	}
+
+
+}
+
+.orbit-container .orbit-prev:hover,
+.orbit-container .orbit-next:hover {
+	background-color: transparent;
+}
+
+
+.orbit-container .orbit-prev:hover > span, 
+.orbit-container .orbit-next:hover > span {
+	border-left-color: #000;
+}
