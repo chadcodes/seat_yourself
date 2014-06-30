@@ -31,12 +31,13 @@
 			    </tr>
 			  </thead>
 
+			  <%  @user.reservations.count %>
+
 			  	<%  @user.reservations.each do |reservation| %>
 				  <tbody>
 				    <tr>
-				      <td><strong><%= link_to reservation.restaurant.restaurant_name, restaurant_path(reservation.restaurant[:id]) %></strong> </td>
-				      <td><%= reservation.restaurant.postal_code %> | <%= reservation.restaurant.street_address %></td>
-				      <td><%= reservation.date %></td>		 
+				      <td><strong><%= link_to reservation.restaurant.name, restaurant_path(reservation.id) %></strong> </td>
+				  		 
 				    </tr>
 				<% end %>
 

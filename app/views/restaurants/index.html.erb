@@ -31,10 +31,11 @@
 				</div>
 
 				<div class="medium-8 columns">
-						<h4><%= link_to restaurant.restaurant_name, restaurant_path(restaurant) %> </h4>
+						<h4><%= link_to restaurant.name, restaurant_path(restaurant) %> </h4>
 						<span>------------------------------------</span>
-						<ul class="no-bullet">				
-							<li> <%= restaurant.street_address %> |  <%= restaurant.cuisine %></li>				
+						<ul class="no-bullet">		
+							<li><%= restaurant.cuisine %></li>		
+							<li> <%= restaurant.address %></li>				
 						</ul>
 				</div>
 
