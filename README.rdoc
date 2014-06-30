@@ -3,7 +3,7 @@ Todo
 
 - Get the make a reservation process working (date format is important)
 - Add in Actionmailer for signup
-- Add geocoder long/lat
+- Add search with geocoder
 
 
 
