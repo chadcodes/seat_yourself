@@ -17,3 +17,6 @@ config.autoload_paths += %W(#{config.root}/lib)
 - db/restaurants.json has 307 restaurants from yelp to load this data from the console type:
 
 GetSeated::RestaurantData.save_data
+
+Pull in
+rake geocode:all CLASS=Restaurant SLEEP=0.25 BATCH=100

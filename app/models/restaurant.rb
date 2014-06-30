@@ -21,6 +21,6 @@ class Restaurant < ActiveRecord::Base
   # Are there seats available for the time, sum the guests on the date/time
   def available(guests, date, user_id)
     r = reservations.where(date: date, user_id: user_id).sum(:guests)
-    r + guests <= seats
+    r + guests <= capacity
   end
 end
