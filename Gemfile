@@ -35,8 +35,12 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Give me some Foundation
 gem 'foundation-rails'
 
+# Give me some Foundation icons
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 
+
+
+gem 'geocoder'
 
 
 group :development  do
