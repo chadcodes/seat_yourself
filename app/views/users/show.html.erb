@@ -24,9 +24,10 @@
 			<table>
 			  <thead>
 			    <tr>
-			      <th width="400">Restaurant</th>
-			      <th width="250">Location</th>
-			      <th width="259">Date & Time</th>
+			      <th width="250">Restaurant</th>
+			      <th width="500">Location</th>
+			      <th width="400">Date & Time</th>
+			       <th width="300">Edit</th>
 
 			    </tr>
 			  </thead>
@@ -36,7 +37,11 @@
 			  	<%  @user.reservations.each do |reservation| %>
 				  <tbody>
 				    <tr>
-				      <td><strong><%= link_to reservation.restaurant.name, restaurant_path(reservation.id) %></strong> </td>
+				      <td><strong><%= link_to reservation.restaurant.name, restaurant_path(reservation.id) %></strong></td>
+				       <td><strong><%= reservation.restaurant.address %></strong> </td>
+				       <td><strong><%= reservation.date %></strong> </td>
+
+				       <td><%=  link_to "Edit Reservation", "#", class: 'button secondary tiny' %> </td>
 				  		 
 				    </tr>
 				<% end %>
