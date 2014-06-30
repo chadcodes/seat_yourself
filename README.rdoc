@@ -18,5 +18,5 @@ config.autoload_paths += %W(#{config.root}/lib)
 
 GetSeated::RestaurantData.save_data
 
-Pull in
+Batch data to pull in long/lat for each
 rake geocode:all CLASS=Restaurant SLEEP=0.25 BATCH=100
