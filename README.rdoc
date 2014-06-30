@@ -1,28 +1,19 @@
 Todo
 ---
 
+- Get the make a reservation process working (date format is important)
+- Add in Actionmailer for signup
+- Add geocoder long/lat
 
 
-Query stuff
---
 
-# Get the number of guests for a time slot
+Seeding the Restaurant Data
+---
 
-1) Reservation.where(date: (Date.today), restaurant_id: 3, time_slot: 1).sum("guests")
+- inside config/application.rb, this line is needed to load my module from lib/get_seated/restaurant_data.rb:
 
-# Get the user name from a reservation
+config.autoload_paths += %W(#{config.root}/lib)
 
-2) User.find(Reservation.find(2).user_id).name
+- db/restaurants.json has 307 restaurants from yelp to load this data from the console type:
 
-
-3) User.joins(:reservations).where("user_id = 1")
-
-
---
-
-More Rails query magic...
---
-This will find a Users name based on a reservation_id:
-User.find(Reservation.find(2).user_id).name
-
-git test - sandy - 06262014 ******
+GetSeated::RestaurantData.save_data

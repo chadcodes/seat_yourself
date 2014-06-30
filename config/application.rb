@@ -30,5 +30,8 @@ module GetSeated
     # For Foundation 5
     config.assets.precompile += %w( vendor/modernizr )
 
+    # This loads my custom data loader module from the /lib folder
+    config.autoload_paths += %W(#{config.root}/lib)
+
   end
 end
