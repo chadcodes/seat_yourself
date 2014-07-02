@@ -1,20 +1,14 @@
 <div class="margin"></div>
 <div class="row">
 
-
-    <%= link_to "Back home", root_url %><br>
-
     <h3>Make a Reservations at <%= @restaurant.name %></h3>
-
 
     <div class="medium-8 columns">
 
         <div class="row">
-            
 
             <div class="medium-4 columns">
               <%= image_tag(@restaurant.photo_url, :class => "img_preview") %>
-
             </div>
 
             <div class="medium-8 columns">
@@ -29,14 +23,51 @@
                     </ul>
                   </div>
                 <% end %>
-
-                <div class="field">
-                  <%= f.label :guests %><br />
-                  <%= f.text_field :guests %>
-                </div>
-                <div class="field">
-                  <%= f.label :date %><br />
-                  <%= f.text_area :date %>
+                <div class="row">
+                  <div class="medium-4 columns">
+                    Date:<br>
+                    <%= f.date_field :date %>
+                  </div>
+                  <div class="medium-4 columns">
+                    Time:<br>
+                    <%= select_tag(:time, options_for_select([
+                    ['11am', 11],
+                    ['12pm', 12],
+                    ['1pm', 13],
+                    ['2pm', 14],
+                    ['3pm', 15],
+                    ['4pm', 16],
+                    ['5pm', 17],
+                    ['6pm', 18],
+                    ['7pm', 19],
+                    ['8pm', 20],
+                    ['9pm', 21],
+                    ['10pm', 22]], 12)) %>
+                  </div>
+                  <div class="medium-4 columns">
+                    Guests:<br>
+                    <%= f.select(:guests, options_for_select([
+                    ['1', 1],
+                    ['2', 2],
+                    ['3', 3],
+                    ['4', 4],
+                    ['5', 5],
+                    ['6', 6],
+                    ['7', 7],
+                    ['8', 8],
+                    ['9', 9],
+                    ['10', 10],
+                    ['11', 11],
+                    ['12', 12],
+                    ['13', 13],
+                    ['14', 14],
+                    ['15', 15],
+                    ['16', 16],
+                    ['17', 17],
+                    ['18', 18],
+                    ['19', 19],
+                    ['20', 20]], 1)) %>
+                  </div>
                 </div>
                 <div class="actions">
                   <%= f.submit class: 'button success right' %>

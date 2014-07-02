@@ -6,7 +6,7 @@
 
 
 		<div class="row reservation">
-			
+
 			<div class="medium-12 columns">
 				<%= render 'reservation_form' %>
 
@@ -33,9 +33,9 @@
 				<div class="medium-8 columns">
 						<h4><%= link_to restaurant.name, restaurant_path(restaurant) %> </h4>
 						<span>------------------------------------</span>
-						<ul class="no-bullet">		
-							<li><%= restaurant.cuisine %></li>		
-							<li> <%= restaurant.address %></li>				
+						<ul class="no-bullet">
+							<li><%= restaurant.cuisine %></li>
+							<li> <%= restaurant.address %></li>
 						</ul>
 				</div>
 
@@ -46,13 +46,13 @@
 			<hr>
 		</div>
 
-	
+
 
 		<div class="medium-3 columns sidebar">
 
 
 			<%= render 'search' %>
-		
+
 
 		<div class="row">
 
@@ -60,9 +60,9 @@
 			<h5>New in Town!</h5>
 
 				 <%= render 'new_restaurant' %>
-				
+
 			</div><br><hr>
-			
+
 			<!-- Featured restaurants -->
 			<div class="medium-12 columns featured">
 				<h5>Featured Restaurants</h5>
@@ -77,14 +77,14 @@
 				<%= render 'available_restaurant' %>
 
 			</div><br>
-		
-			
 
 
-			</div><!-- row -->	
+
+
+			</div><!-- row -->
 		 </div>
 
-	</div><!-- row -->		
+	</div><!-- row -->
 
 
 </div><!-- row -->
